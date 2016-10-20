@@ -13,6 +13,7 @@
 		5EF23215199C283800DB868E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EF23214199C283800DB868E /* Images.xcassets */; };
 		5EF23221199C283800DB868E /* SelfSizingCellsDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF23220199C283800DB868E /* SelfSizingCellsDemoTests.swift */; };
 		5EF2322B199C289900DB868E /* LabelHoldingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF2322A199C289900DB868E /* LabelHoldingCell.swift */; };
+		888C40D01DB8BB9C0079410B /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888C40CF1DB8BB9C0079410B /* Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		5EF2321F199C283800DB868E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EF23220199C283800DB868E /* SelfSizingCellsDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizingCellsDemoTests.swift; sourceTree = "<group>"; };
 		5EF2322A199C289900DB868E /* LabelHoldingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelHoldingCell.swift; sourceTree = "<group>"; };
+		888C40CF1DB8BB9C0079410B /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			children = (
 				5EF2320D199C283800DB868E /* AppDelegate.swift */,
 				5EF2320F199C283800DB868E /* ViewController.swift */,
+				888C40CF1DB8BB9C0079410B /* Data.swift */,
 				5EF2322A199C289900DB868E /* LabelHoldingCell.swift */,
 				5EF23211199C283800DB868E /* Main.storyboard */,
 				5EF23214199C283800DB868E /* Images.xcassets */,
@@ -218,6 +221,7 @@
 				5EF2322B199C289900DB868E /* LabelHoldingCell.swift in Sources */,
 				5EF23210199C283800DB868E /* ViewController.swift in Sources */,
 				5EF2320E199C283800DB868E /* AppDelegate.swift in Sources */,
+				888C40D01DB8BB9C0079410B /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
