@@ -63,20 +63,20 @@ ignore the item.
 */
 let onelongitem="I am a long string containing spaces to see if text wraps within a label properly or if instead it produces undesired artefacts."
 
-let items = smallitems.componentsSeparatedByString(" ") + [onelongitem]
+let items = smallitems.components(separatedBy: " ") + [onelongitem]
 
-class ViewController: UICollectionViewController, UICollectionViewDataSource {
+class ViewController: UICollectionViewController {
   
-  override func prefersStatusBarHidden() -> Bool { return true; }
+  override var prefersStatusBarHidden : Bool { return true; }
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
     // register the cell type
-    self.collectionView!.registerClass(LabelHoldingCell.self, forCellWithReuseIdentifier: LabelHoldingCell.classReuseIdentifier)
+    self.collectionView!.register(LabelHoldingCell.self, forCellWithReuseIdentifier: LabelHoldingCell.classReuseIdentifier)
     
     // tell the collection view layout object to let the cells self-size
-    var flowLayout = self.collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
+    let flowLayout = self.collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
 
     let estimationHeight = useMagicallyBrokenHeight ? 20 : 21
     
@@ -85,19 +85,19 @@ class ViewController: UICollectionViewController, UICollectionViewDataSource {
 
   // MARK: <UICollectionViewDatasource>
   
-  override func collectionView(collectionView: UICollectionView,
-    cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
+  override func collectionView(_ collectionView: UICollectionView,
+    cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
   {
-    var cell = collectionView.dequeueReusableCellWithReuseIdentifier(LabelHoldingCell.classReuseIdentifier, forIndexPath: indexPath) as! LabelHoldingCell
-    cell.setText(items[indexPath.row])
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LabelHoldingCell.classReuseIdentifier, for: indexPath) as! LabelHoldingCell
+    cell.setText(items[(indexPath as NSIndexPath).row])
     return cell
   }
   
-  override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+  override func numberOfSections(in collectionView: UICollectionView) -> Int {
     return 1;
   }
   
-  override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+  override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return items.count;
   }
 }

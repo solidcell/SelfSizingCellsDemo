@@ -19,11 +19,11 @@ entirety of text which would not fit on a portrait iPhone screen.
 class LabelHoldingCell: UICollectionViewCell {
   weak var labelView: UILabel!
 
-  override class func requiresConstraintBasedLayout() -> Bool { return true; }
+  override class var requiresConstraintBasedLayout : Bool { return true; }
   class var classReuseIdentifier: String { return "cellIdentifier" }
 
   required init(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
+    super.init(coder: aDecoder)!
     // not implemented
   }
   
@@ -31,8 +31,8 @@ class LabelHoldingCell: UICollectionViewCell {
     super.init(frame: frame)
     
     let label = UILabel(frame: self.bounds)
-    label.setTranslatesAutoresizingMaskIntoConstraints(false)
-    label.backgroundColor = UIColor.lightGrayColor()
+    label.translatesAutoresizingMaskIntoConstraints = false
+    label.backgroundColor = UIColor.lightGray
     label.numberOfLines = 0
     /*
     
@@ -55,15 +55,15 @@ class LabelHoldingCell: UICollectionViewCell {
     // since AL constraints have no causal directionality
     // (unlike autoresizing masks), this means the label's
     // intrinsic content size will determine the cell's size.
-    self.setTranslatesAutoresizingMaskIntoConstraints(false)
+    self.translatesAutoresizingMaskIntoConstraints = false
     let viewBindings = ["label":label]
-    self.contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[label]|", options: nil, metrics: nil, views: viewBindings))
-    self.contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[label]|", options: nil, metrics: nil, views: viewBindings))
+    self.contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[label]|", options: [], metrics: nil, views: viewBindings))
+    self.contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[label]|", options: [], metrics: nil, views: viewBindings))
 
     self.labelView = label
   }
 
-  func setText(text:String) {
+  func setText(_ text:String) {
     self.labelView.text = text;
   }
 }
